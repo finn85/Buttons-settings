@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Buttons settings</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="main-container">
+		<div class="sub-container">
+			<div id="preview" class="block">
+				<h1>PREVIEW</h1>
+				<div class="button" id="button">BUTTON</div>
+			</div>
+			<div class="block">
+				<h1>CONFIGURE</h1>
+				<div id="configure">
+					<div class="conf-block">
+					<h3>BUTTON TYPE</h3>
+					<div class="conf-subblock">
+							<input type="radio" name="button-type" id="button-type-1" checked="checked">
+							<label for="button-type-1">TYPE 1</label>
+							<input type="radio" name="button-type" id="button-type-2">
+							<label for="button-type-2">TYPE 2</label>
+							<input type="radio" name="button-type" id="button-type-3">
+							<label for="button-type-3">TYPE 3</label>
+						</div>
+					</div>
+					<div class="conf-block">
+						<h3>BUTTON COLOR</h3>
+						<div class="conf-subblock">
+							<input type="range" id="buttonColor" min="0" max="360" step="1" value="0">
+						</div>
+					</div>
+					<div class="conf-block">
+						<h3>BUTTON TEXT</h3>
+						<div class="conf-subblock">
+							<input type="text" id="buttonText" value="BUTTON">
+						</div>
+					</div>
+					<div class="conf-block">
+						<h3>BUTTON HEIGHT</h3>
+						<div class="conf-subblock">
+							<input type="range" id="buttonHeight" min="30" max="250" step="5" value="50">
+						</div>
+					</div>
+					<div class="conf-block">
+						<h3>BUTTON WIDTH</h3>
+						<div class="conf-subblock">
+							<input type="range" id="buttonWidth" min="30" max="500" step="10" value="250">
+						</div>
+					</div>
+					<div class="conf-block">
+						<h3>FONT SIZE</h3>
+						<div class="conf-subblock">
+							<input type="range" id="buttonFontSize" min="10" max="50" step="1" value="25">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sub-container">
+			<div class="block">
+				<h1>CSS CODE</h1>
+				<div id="cssCode"></div>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
