@@ -24,18 +24,26 @@
 							<label for="button-type-2">TYPE 2</label>
 							<input type="radio" name="button-type" id="button-type-3">
 							<label for="button-type-3">TYPE 3</label>
+							<input type="radio" name="button-type" id="button-type-4">
+							<label for="button-type-4">TYPE 4</label>
 						</div>
 					</div>
 					<div class="conf-block">
-						<h3>BUTTON COLOR</h3>
+						<h3>BUTTON HUE</h3>
 						<div class="conf-subblock">
-							<input type="range" id="buttonColor" min="0" max="360" step="1" value="0">
+							<input type="range" id="buttonHue" min="0" max="360" step="1" value="0">
 						</div>
 					</div>
 					<div class="conf-block">
-						<h3>BUTTON TEXT</h3>
+						<h3>BUTTON SATURATION</h3>
 						<div class="conf-subblock">
-							<input type="text" id="buttonText" value="BUTTON">
+							<input type="range" id="buttonSaturation" min="0" max="100" step="1" value="100">
+						</div>
+					</div>
+					<div class="conf-block">
+						<h3>BUTTON LIGHTNESS</h3>
+						<div class="conf-subblock">
+							<input type="range" id="buttonLightness" min="0" max="70" step="1" value="40">
 						</div>
 					</div>
 					<div class="conf-block">
@@ -56,6 +64,12 @@
 							<input type="range" id="buttonFontSize" min="10" max="50" step="1" value="25">
 						</div>
 					</div>
+					<div class="conf-block">
+						<h3>BUTTON TEXT</h3>
+						<div class="conf-subblock">
+							<input type="text" id="buttonText" value="BUTTON">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -67,6 +81,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="script.js"></script>
+	<script src="mainscript.js"></script>
+	<script src="button01.js"></script>
 </body>
 </html>
