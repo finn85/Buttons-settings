@@ -84,12 +84,12 @@ function writeCSS() {
 	"	background: hsl(" + butColVal + ",100%,40%);<br>" +
 	"	box-sizing: border-box;<br>" +
 	"	box-shadow:<br>" +
-	"		inset 0 -" + Math.round(butHeightVal*.06*10)/10 + "px 0 0 hsl(" + butColVal + ",100%,48%),<br>" +
+	"		inset 0 -" + Math.round(butHeightVal*.06*10)/10 + "px hsl(" + butColVal + ",100%,48%),<br>" +
 	"		inset 0 -" + Math.round(butHeightVal*.6) + "px " + Math.round(butHeightVal*.3) + "px -" + Math.round(butHeightVal*.4) + "px hsl(" + butColVal + ",100%,44%),<br>" +
 	"		inset 0 -" + Math.round(butHeightVal*.8) + "px " + Math.round(butHeightVal*.3) + "px -" + Math.round(butHeightVal*.4) + "px hsl(" + butColVal + ",100%,40%),<br>" +
 	"		inset 0 -" + Math.round(butHeightVal*.22) + "px " + Math.round(butHeightVal*.01*10)/10 + "px " + Math.round(butHeightVal*.22) + "px hsl(" + butColVal + ",100%,36%),<br>" +
 	"		inset 0 " + Math.round(butHeightVal*.2) + "px " + Math.round(butHeightVal*.8) + "px -" + Math.round(butHeightVal*.1) + "px white,<br>" +
-	"		0 " + Math.round(butHeightVal*.08*10)/10 + "px " + Math.round(butHeightVal*.02*10)/10 + "px 0 hsla(" + butColVal + ",100%,20%,0.5),<br>" +
+	"		0 " + Math.round(butHeightVal*.08*10)/10 + "px " + Math.round(butHeightVal*.02*10)/10 + "px hsla(" + butColVal + ",100%,20%,0.5),<br>" +
 	"		0 0 " + Math.round(butHeightVal*.08*10)/10 + "px " + Math.round(butHeightVal*.01*10)/10 + "px rgba(0,0,0,0.5);<br>" +
 	"}<br>" +
 	".button:hover {<br>" +
@@ -98,9 +98,9 @@ function writeCSS() {
 	"}<br>" +
 	".button:active {<br>" +
 	"	box-shadow:<br>" +
-	"		inset 0 " + Math.round(butHeightVal*.04*10)/10 + "px " + Math.round(butHeightVal*.02*10)/10 + "px 0 hsla(" + butColVal + ",100%,20%,.5),<br>" +
+	"		inset 0 " + Math.round(butHeightVal*.04*10)/10 + "px " + Math.round(butHeightVal*.02*10)/10 + "px hsla(" + butColVal + ",100%,20%,.5),<br>" +
 	"		inset 0 0 " + Math.round(butHeightVal*.4) + "px " + Math.round(butHeightVal*.4) + "px hsla(" + butColVal + ",100%,40%,.2),<br>" +
-	"		inset 0 -" + Math.round(butHeightVal*.06*10)/10 + "px 0 0 hsl(" + butColVal + ",100%,48%),<br>" +
+	"		inset 0 -" + Math.round(butHeightVal*.06*10)/10 + "px hsl(" + butColVal + ",100%,48%),<br>" +
 	"		inset 0 -" + Math.round(butHeightVal*.6) + "px " + Math.round(butHeightVal*.3) + "px -" + Math.round(butHeightVal*.4) + "px hsl(" + butColVal + ",100%,44%),<br>" +
 	"		inset 0 -" + Math.round(butHeightVal*.8) + "px " + Math.round(butHeightVal*.3) + "px -" + Math.round(butHeightVal*.4) + "px hsl(" + butColVal + ",100%,40%),<br>" +
 	"		inset 0 -" + Math.round(butHeightVal*.22) + "px " + Math.round(butHeightVal*.01*10)/10 + "px " + Math.round(butHeightVal*.22) + "px hsl(" + butColVal + ",100%,36%),<br>" +
@@ -110,9 +110,9 @@ function writeCSS() {
 }
 
 button.addEventListener("mousedown", function () {
-	button.style.boxShadow = "inset 0 "+(butHeightVal*0.04)+"px "+(butHeightVal*0.02)+"px 0 hsla("+butColVal+",100%,20%,.5)," +
+	button.style.boxShadow = "inset 0 "+(butHeightVal*0.04)+"px "+(butHeightVal*0.02)+"px hsla("+butColVal+",100%,20%,.5)," +
 		"inset 0 0 "+(butHeightVal*.4)+"px "+(butHeightVal*.4)+"px hsla("+butColVal+",100%,40%,.2)," +
-		"inset 0 "+(-butHeightVal*0.06)+"px 0 0 hsl("+butColVal+",100%,48%)," +
+		"inset 0 "+(-butHeightVal*0.06)+"px hsl("+butColVal+",100%,48%)," +
 		"inset 0 "+(-butHeightVal*.6)+"px "+(butHeightVal*.3)+"px "+(-butHeightVal*.4)+"px hsl("+butColVal+",100%,44%)," +
 		"inset 0 "+(-butHeightVal*.8)+"px "+(butHeightVal*.3)+"px "+(-butHeightVal*.4)+"px hsl("+butColVal+",100%,40%)," +
 		"inset 0 "+(-butHeightVal*.22)+"px "+(butHeightVal*.01)+"px "+(butHeightVal*.22)+"px hsl("+butColVal+",100%,36%)," +
@@ -121,11 +121,25 @@ button.addEventListener("mousedown", function () {
 })
 
 button.addEventListener("mouseup", function() {
-	button.style.boxShadow = "inset 0 "+(-butHeightVal*0.06)+"px 0 0 hsl("+butColVal+",100%,48%)," +
+	button.style.boxShadow = "inset 0 "+(-butHeightVal*0.06)+"px hsl("+butColVal+",100%,48%)," +
 		"inset 0 "+(-butHeightVal*.6)+"px "+(butHeightVal*.3)+"px "+(-butHeightVal*.4)+"px hsl("+butColVal+",100%,44%)," +
 		"inset 0 "+(-butHeightVal*.8)+"px "+(butHeightVal*.3)+"px "+(-butHeightVal*.4)+"px hsl("+butColVal+",100%,40%)," +
 		"inset 0 "+(-butHeightVal*.22)+"px "+(butHeightVal*.01)+"px "+(butHeightVal*.22)+"px hsl("+butColVal+",100%,36%)," +
 		"inset 0 "+(butHeightVal*.2)+"px "+(butHeightVal*.8)+"px "+(-butHeightVal*.1)+"px white," +
-		"0 "+(butHeightVal*.08)+"px "+(butHeightVal*.02)+"px 0 hsla("+butColVal+",100%,20%,.5)," +
+		"0 "+(butHeightVal*.08)+"px "+(butHeightVal*.02)+"px hsla("+butColVal+",100%,20%,.5)," +
 		"0 0 "+(butHeightVal*.08)+"px "+(butHeightVal*.01)+"px rgba(0,0,0,.5)";
 })
+
+
+
+function selectCssText() {
+	var rng, sel;
+	rng = document.createRange(); //создаем объект область
+	rng.selectNode(cssCode); //выберем текущий узел
+	sel = window.getSelection(); //Получаем объект текущее выделение
+	console.log(sel);
+	sel.removeAllRanges(); //Очистим все выделения (на всякий случай) 
+	sel.addRange(rng); //Выделим текущий узел
+}
+selectText.addEventListener("click", selectCssText);
+
