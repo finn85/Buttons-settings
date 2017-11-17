@@ -7,37 +7,37 @@ var butTextVal,
 	butWidthVal;
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 window.onload = function() {
-	upWrWr();
+	writeStyleInHtml();
 }
 
 buttonText.addEventListener("keyup",changeButText);
 
-buttonHue.addEventListener("input",upWrWr);
-buttonSaturation.addEventListener("input",upWrWr);
-buttonLightness.addEventListener("input",upWrWr);
-buttonFontSize.addEventListener("input",upWrWr);
-buttonHeight.addEventListener("input",upWrWr);
-buttonWidth.addEventListener("input",upWrWr);
+buttonHue.addEventListener("input",writeStyleInHtml);
+buttonSaturation.addEventListener("input",writeStyleInHtml);
+buttonLightness.addEventListener("input",writeStyleInHtml);
+buttonFontSize.addEventListener("input",writeStyleInHtml);
+buttonHeight.addEventListener("input",writeStyleInHtml);
+buttonWidth.addEventListener("input",writeStyleInHtml);
 
 buttonType1.addEventListener("mousedown", function(){
 	changeButStyle(1);
+	setTimeout(writeStyleInHtml,300);
 });
-buttonType1.addEventListener("mouseup", upWrWr);
 
 buttonType2.addEventListener("mousedown", function(){
 	changeButStyle(2);
+	setTimeout(writeStyleInHtml,300);
 });
-buttonType2.addEventListener("mouseup", upWrWr);
 
 buttonType3.addEventListener("mousedown", function(){
 	changeButStyle(3);
+	setTimeout(writeStyleInHtml,300);
 });
-buttonType3.addEventListener("mouseup", upWrWr);
 
 buttonType4.addEventListener("mousedown", function(){
 	changeButStyle(4);
+	setTimeout(writeStyleInHtml,300);
 });
-buttonType4.addEventListener("mouseup", upWrWr);
 
 selectText.addEventListener("click", selectCssText);
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,18 +45,14 @@ function changeButText() {
 	butTextVal = document.getElementById("buttonText").value;
 	button.innerHTML = butTextVal;
 }
-function updateVars() {
+function writeStyleInHtml() {
 	butFontSizeVal = document.getElementById("buttonFontSize").value;
 	butHueVal = document.getElementById("buttonHue").value;
 	butSatVal = document.getElementById("buttonSaturation").value;
 	butLightVal = document.getElementById("buttonLightness").value;
 	butHeightVal = document.getElementById("buttonHeight").value;
 	butWidthVal = document.getElementById("buttonWidth").value;
-}
-function writeCssPreview() {
-	cssCode.innerHTML = cssText();;
-}
-function writeStyleInHead() {
+	cssCode.innerHTML = cssText();
 	var headEl = document.getElementsByTagName("head")[0],
 		oldStyleEl = document.getElementsByTagName("style")[0],
 		newStyleEl = document.createElement("style");
@@ -65,11 +61,6 @@ function writeStyleInHead() {
 		oldStyleEl.remove();
 	}
 	headEl.appendChild(newStyleEl);
-}
-function upWrWr() {
-	updateVars();
-	writeCssPreview();
-	writeStyleInHead();
 }
 function changeButStyle(num) {
 	var body = document.getElementsByTagName("body")[0],
@@ -85,4 +76,49 @@ function selectCssText() {
 	sel = window.getSelection(); //Получаем объект текущее выделение
 	sel.removeAllRanges(); //Очистим все выделения (на всякий случай) 
 	sel.addRange(rng); //Выделим текущий узел
+}
+function val(par,mult,acc){ 
+	var result;
+	switch (par){
+		case "fs":
+			result = calculate(butFontSizeVal) + "px";
+		break;
+		case "h":
+			result = calculate(butHeightVal) + "px";
+		break;
+		case "w":
+			result = calculate(butWidthVal) + "px";
+		break;
+		case "hu":
+			result = calculate(butHueVal);
+		break;
+		case "st":
+			result = calculate(butSatVal) + "%";
+			if (parseInt(result) > 100) {
+				result = "100%";
+			}
+		break;
+		case "lg":
+			result = calculate(butLightVal) + "%";
+			if (parseInt(result) > 100) {
+				result = "100%";
+			}
+		break;
+
+	}
+	function calculate(p){
+		if (acc) {
+			if(mult) {
+				return Math.round(p*mult*10)/10;
+			} else {
+				return p;
+			}
+		}
+		if(mult) {
+			return Math.round(p*mult);
+		} else {
+			return p;
+		}
+	}
+	return result;
 }
